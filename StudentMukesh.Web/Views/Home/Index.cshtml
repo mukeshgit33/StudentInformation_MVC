@@ -1,0 +1,20 @@
+﻿@model int
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+@* @foreach (var item in Model)
+{
+   <span>@item.Id -  @item.Name</span> 
+} *@
+<span>@Model</span>
+<form asp-action="Privacy">
+<div class="form-group">
+<input type="text" name="nametxt" class="form-control"/>
+</div>
+<button type="submit" value="Submit">Submit</button>
+</form>
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>

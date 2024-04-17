@@ -1,0 +1,43 @@
+﻿@model IEnumerable<StudentMukesh.Web.ViewModels.PeopleViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>People List</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-info">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PeopleId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PeopleName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PeopleId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PeopleName)
+            </td>
+            <td>
+               @*  <a href="~/Home/Edit?id=" >Edit</a> *@
+
+                @Html.ActionLink("Edit", "Edit", new { id=item.PeopleId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.PeopleId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.PeopleId })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
